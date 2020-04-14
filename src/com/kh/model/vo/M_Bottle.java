@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import com.kh.view.MiniGameView;
 
 public class M_Bottle extends M_Garbage{
-	MiniGameView mgv = new MiniGameView(mf, p);
+	MiniGameView mgv = new MiniGameView();
 	Image image;
 	JLabel label;
 	int random1 = new Random().nextInt(5)+1;
