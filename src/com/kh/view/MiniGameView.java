@@ -19,6 +19,7 @@ public class MiniGameView extends JPanel implements Runnable {
 	JLabel label;
 	JLabel penz_l;
 	Thread th;
+	M_Garbage g = new M_Bottle();
 	
 	Image penz = new ImageIcon("src/image/minigame/penz_up.png").getImage().getScaledInstance(100, 130, 0);
 	ImageIcon icon = new ImageIcon(penz);
@@ -39,7 +40,7 @@ public class MiniGameView extends JPanel implements Runnable {
 		this.setLayout(null);
 		
 		//배경이미지
-		background = new ImageIcon("src/image/minigame/제목 없음-1.png").getImage().getScaledInstance(360, 640, 0);
+		background = new ImageIcon("src\\image\\minigame\\제목 없음-1.png").getImage().getScaledInstance(360, 640, 0);
 		label = new JLabel(new ImageIcon(background));
 		label.setBounds(0, 0, 360, 640);
 		
@@ -68,6 +69,7 @@ public class MiniGameView extends JPanel implements Runnable {
 	}
 
 
+	
 
 	class Key implements KeyListener{
 		
@@ -116,6 +118,9 @@ public class MiniGameView extends JPanel implements Runnable {
 			}
 			penz_p.add(penz_l);
 			
+			if((penz_l.getX() == ((M_Bottle)g).getLabel().getX()+10) || (penz_l.getX() == ((M_Bottle)g).getLabel().getX()-10)) {
+				((M_Bottle)g).getLabel().setVisible(false);
+			}
 			
 		}
 
