@@ -6,10 +6,11 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import com.kh.view.MainView;
 import com.kh.view.MiniGameView;
 
 public class M_Bottle extends M_Garbage{
-	MiniGameView mgv = new MiniGameView();
+	MiniGameView mgv = new MiniGameView(MainView mf, Player p);
 	Image image;
 	JLabel label;
 	int random1 = new Random().nextInt(5)+1;
