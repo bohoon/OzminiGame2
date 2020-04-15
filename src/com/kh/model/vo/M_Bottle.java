@@ -17,7 +17,7 @@ public class M_Bottle extends M_Garbage{
 	
 	public M_Bottle() {
 		image = new ImageIcon(""+ "png").getImage().getScaledInstance(40, 40, 0);
-		label.setBounds(super.getGx(),super.getGy(), 20, 20);
+		label = new JLabel(new ImageIcon(image));
 	}
 
 	public Image getImage() {

@@ -10,23 +10,24 @@ public class M_Garbage {
 	private int Gx;
 	private int Gy;
 	private boolean b = true;
+	
 	public M_Garbage() {
 		int random1 = new Random().nextInt(5)+1;
 		if(random1 == 1) {
-			Gx = 10;
-			Gy = 10;
+			setGx((getGx())+10);
+			setGy((getGy())+10);
 		}else if(random1 == 2) {
-			Gx = 20;
-			Gy = 20;
+			setGx((getGx())+20);
+			setGy((getGy())+20);
 		}else if(random1 == 3) {
-			Gx = 30;
-			Gy = 30;
+			setGx((getGx())+30);
+			setGy((getGy())+30);
 		}else if(random1 == 4) {
-			Gx = 40;
-			Gy = 40;
+			setGx((getGx())+40);
+			setGy((getGy())+40);
 		}else if(random1 == 5) {
-			Gx = 50;
-			Gy = 50;
+			setGx((getGx())+50);
+			setGy((getGy())+50);
 		}
 		
 		this.Gx = Gx;

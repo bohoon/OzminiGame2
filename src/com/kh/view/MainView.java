@@ -14,9 +14,10 @@ public class MainView extends JFrame {
 		this.setBounds(0, 0, 380, 680);
 		
 		
-		MiniGameView mgv = new MiniGameView(this, p);
+		//MiniGameView mgv = new MiniGameView(this, p);
 //		Thread th = new Thread(mgv);
 //		th.start();
+		
 		
 		this.add(new MiniGameView(this, p));
 		
