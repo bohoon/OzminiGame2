@@ -252,6 +252,8 @@ public class HowToPlayView2 extends JPanel{
 			
 			this.add(mo);
 			this.setResizable(false);
+			
+			//g
 		}
 	}
 }
