@@ -16,13 +16,15 @@ import com.kh.model.vo.*;
 public class MiniGameView extends JPanel{
 	private MainView mf;
 	private MiniGameView miniGameView;
-	
+	int count = 0;
 	private boolean hit() {
 		int x1 = penz_p.getX();
 		int y1 = penz_p.getY();
 		int xm1 = monster_p1.getX();
 		int xm2 = monster_p2.getX();
 		int xm3 = monster_p3.getX();
+		
+		
 		
 		if(((((x1-25) <= xm1) && ((x1+75) >= xm1)) && (y1 == 370)) 
 				|| ((((x1-25) <= xm2) && ((x1+75) >= xm2) && (y1 == 220)) 
@@ -67,9 +69,9 @@ public class MiniGameView extends JPanel{
 	Image monster2= new ImageIcon("src/image/minigame/angryshark.png").getImage().getScaledInstance(50, 60, 0);
 	Image monster3 = new ImageIcon("src/image/minigame/angryshark.png").getImage().getScaledInstance(50, 60, 0);
 	
-	Image garbage1 = new ImageIcon("src/image/minigame/angryshark.png").getImage().getScaledInstance(50, 60, 0);
-	Image garbage2 = new ImageIcon("src/image/minigame/angryshark.png").getImage().getScaledInstance(50, 60, 0);
-	Image garbage3 = new ImageIcon("src/image/minigame/angryshark.png").getImage().getScaledInstance(50, 60, 0);
+	Image garbage1 = new ImageIcon("src\\image\\minigame\\cigarette.png").getImage().getScaledInstance(50, 50, 0);
+	Image garbage2 = new ImageIcon("src\\image\\minigame\\can1.png").getImage().getScaledInstance(50, 50, 0);
+	Image garbage3 = new ImageIcon("src/image/minigame/angryshark.png").getImage().getScaledInstance(50, 50, 0);
 	
 	
 	boolean keyUp = false;
@@ -179,19 +181,32 @@ public class MiniGameView extends JPanel{
 		garbage_p3.setOpaque(false);
 		
 		int random1 = new Random().nextInt(3)+1;
-		garbage_p1.setBounds(0, 10, 50, 50);
-		garbage_p2.setBounds(0, 10, 50, 50);
-		garbage_p3.setBounds(0, 10, 50, 50);
+		if( random1 == 1) {
+			garbage_p1.setBounds(290, 520, 50, 50);
+			garbage_p2.setBounds(240, 370, 50, 50);
+			garbage_p3.setBounds(270, 520, 50, 50);
+		}else if(random1 == 2){
+			garbage_p1.setBounds(290, 520, 50, 50);
+			garbage_p2.setBounds(240, 370, 50, 50);
+			garbage_p3.setBounds(270, 520, 50, 50);
+		}else if(random1 == 3) {
+			garbage_p1.setBounds(290, 520, 50, 50);
+			garbage_p2.setBounds(240, 370, 50, 50);
+			garbage_p3.setBounds(270, 520, 50, 50);
+		}
+		
 		
 		this.add(penz_p);
-		
-		this.add(monster_p1);
-		this.add(monster_p2);
-		this.add(monster_p3);
 		
 		this.add(garbage_p1);
 		this.add(garbage_p2);
 		this.add(garbage_p3);
+		
+
+		
+		this.add(monster_p1);
+		this.add(monster_p2);
+		this.add(monster_p3);
 		
 		this.add(obst1_1);
 		this.add(obst1_2);
@@ -237,7 +252,25 @@ public class MiniGameView extends JPanel{
 			Thread tf = new Thread(fall);
 			tf.start();
 
-			
+			if(garbage_p1.getX() == penz_p.getX()) {
+				if(garbage_p1.getY() == penz_p.getY()) {
+					garbage_p1.setVisible(false);
+					count++;
+				}
+			}
+			if(garbage_p2.getX() == penz_p.getX()) {
+				if(garbage_p2.getY() == penz_p.getY()) {
+					garbage_p2.setVisible(false);
+					count++;
+				}
+			}
+			if(garbage_p3.getX() == penz_p.getX()) {
+				if(garbage_p3.getY() == penz_p.getY()) {
+					garbage_p3.setVisible(false);
+					count++;
+				}
+			}
+			System.out.println(count);
 			switch (e.getKeyCode()) {
 			case KeyEvent.VK_UP:
 				keyUp = true;
